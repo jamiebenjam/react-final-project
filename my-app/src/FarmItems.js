@@ -1,7 +1,11 @@
-function FarmItems({id, name, image, price, type}) {
+function FarmItems({id, name, image, price, type, setMyFarmItems, item}) {
+
+    function handleClick() {
+        setMyFarmItems((prevState) => ([...prevState, item]))
+    }
 
     return (
-        <div>
+        <div onClick={handleClick}>
             <p>{name}</p>
             <img style={{height : 150, width: 150}} src={image} alt="it worked"></img>
             <p>{price}</p>

@@ -1,9 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 import FarmItems from "./FarmItems"
 
-function Town({farmItems}) {
+function Town({farmItems, setMyFarmItems}) {
 
-const mapFarmItems = farmItems.map((item) => {
+    const [category, setCategory] = useState("")
+
+    function handleChange(e) {
+        setCategory(e.target.value)
+    }
+
+    const filteredCategory = farmItems.filter((item) => item.type === category)
+
+
+
+
+const mapFarmItems = filteredCategory.map((item) => {
     return <FarmItems
         item={item}
         key={item.id}
@@ -12,12 +23,21 @@ const mapFarmItems = farmItems.map((item) => {
         image={item.image}
         price={item.price}
         type={item.type}
+        setMyFarmItems={setMyFarmItems}
     />
 })
 
 return (
     <div>
-        <h1>Farm Items</h1>
+        <h1>General Store</h1>
+    <label>
+        <strong>Filter: </strong>
+        <select onChange={handleChange}>
+         <option value="">All</option>
+          <option value="produce">Produce</option>
+          <option value="livestock">Livestock</option>
+        </select>
+      </label>
         {mapFarmItems}
     </div>
 )
