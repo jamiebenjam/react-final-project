@@ -1,14 +1,16 @@
 import { dblClick } from '@testing-library/user-event/dist/click';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Header from './Header';
 import table from './table1.jpeg';
-import FarmData from './db.json';
+import Town from './Town';
 
 function App() {
 
+  const [farmItems, setFarmItems] = useState([])
+
 function fetchFarm() {
-  fetch('./db.json')
+  fetch("http://localhost:8000/farm")
   .then((r) => r.json())
   .then((farmData) =>console.log(farmData))
 }
@@ -19,6 +21,7 @@ useEffect(fetchFarm, [])
     <div className="App">
       <Header />
       <img src={table}></img>
+      <Town farmItems={farmItems} />
     </div>
   );
 }
