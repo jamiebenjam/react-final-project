@@ -3,18 +3,23 @@ import FarmItems from "./FarmItems"
 
 function Town({farmItems, setMyFarmItems}) {
 
-    const [category, setCategory] = useState("")
+    const [category, setCategory] = useState()
 
     function handleChange(e) {
         setCategory(e.target.value)
     }
+   
+    function getFilteredCategory() {
+        if (!category) {
+          return farmItems;
+        }
+        return farmItems.filter((item) => item.type === category);
+      }
+      
 
-    const filteredCategory = farmItems.filter((item) => item.type === category)
 
 
-
-
-const mapFarmItems = filteredCategory.map((item) => {
+const mapFarmItems = getFilteredCategory().map((item) => {
     return <FarmItems
         item={item}
         key={item.id}
