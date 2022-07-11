@@ -1,5 +1,5 @@
 function FarmItems({id, name, image, price, type}) {
-console.log(image)
+
     return (
         <div>
             <p>{name}</p>

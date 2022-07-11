@@ -5,6 +5,7 @@ import table from './table1.jpeg';
 import Town from './Town';
 import { Route, Switch } from 'react-router-dom';
 import Bank from './Bank';
+import Clock from './Clock';
 
 
 
@@ -32,10 +33,9 @@ useEffect(fetchFarm, [])
           <Bank />
         </Route>
         <Route path="/town">
-          <Town />
+          <Town farmItems={farmItems}/>
         </Route>
       </Switch>
-      <Town farmItems={farmItems} />
     </div>
 
   );
