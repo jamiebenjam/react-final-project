@@ -3,7 +3,7 @@ console.log(image)
     return (
         <div>
             <p>{name}</p>
-            <img src={image} alt="it worked"></img>
+            <img style={{height : 150, width: 150}} src={image} alt="it worked"></img>
             <p>{price}</p>
             <p>{type}</p>
         </div>
