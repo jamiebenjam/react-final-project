@@ -1,0 +1,12 @@
+{
+  "farm": [
+   {
+       "id": 1,
+       "name": "pig",
+       "image": "https://img.freepik.com/premium-vector/cute-pig-is-sitting-with-two-finger-cartoon-illustration_403370-527.jpg?w=2000",
+       "price": 100,
+       "type": "livestock"
+   }
+  
+  ]
+}

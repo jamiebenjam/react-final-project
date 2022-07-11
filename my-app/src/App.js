@@ -12,7 +12,7 @@ function App() {
 function fetchFarm() {
   fetch("http://localhost:8000/farm")
   .then((r) => r.json())
-  .then((farmData) =>console.log(farmData))
+  .then((farmData) =>setFarmItems(farmData))
 }
 
 useEffect(fetchFarm, [])
