@@ -17,6 +17,7 @@ const mapFarmItems = farmItems.map((item) => {
 
 return (
     <div>
+        <h1>Farm Items</h1>
         {mapFarmItems}
     </div>
 )

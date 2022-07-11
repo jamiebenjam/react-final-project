@@ -1,13 +1,17 @@
-import { dblClick } from '@testing-library/user-event/dist/click';
 import { useEffect, useState } from 'react';
 import './App.css';
-import Header from './Header';
+import Map from './Map';
 import table from './table1.jpeg';
 import Town from './Town';
+import { Route, Switch } from 'react-router-dom';
+import Bank from './Bank';
+
+
 
 function App() {
 
   const [farmItems, setFarmItems] = useState([])
+  const [count, setCount] = useState(0);
 
 function fetchFarm() {
   fetch("http://localhost:8000/farm")
@@ -18,11 +22,22 @@ function fetchFarm() {
 useEffect(fetchFarm, [])
  
   return (
+
     <div className="App">
-      <Header />
-      <img src={table}></img>
+      <Map />
+      <Clock count={count} setCount={setCount}/>
+      <img style={{height : 350, width: 550}}src={table}></img>
+      <Switch>
+        <Route exact path="/">
+          <Bank />
+        </Route>
+        <Route path="/town">
+          <Town />
+        </Route>
+      </Switch>
       <Town farmItems={farmItems} />
     </div>
+
   );
 }
 
