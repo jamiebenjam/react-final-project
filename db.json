@@ -1,0 +1,12 @@
+{
+  "farm": [
+   {
+       "id": 1,
+       "name": "pig",
+       "image":"./images/pig.png",
+       "price": 100,
+       "type": "livestock"
+   }
+  
+  ]
+}
