@@ -43,7 +43,7 @@ const livestockFilter = myFarmItems.filter((item) => item.type === "livestock")
           <TheRanch bank={bank} />
         </Route>
         <Route path="/town">
-          <Town farmItems={farmItems} setMyFarmItems={setMyFarmItems}/>
+          <Town setFarmItems={setFarmItems} farmItems={farmItems} setMyFarmItems={setMyFarmItems}/>
         </Route>
         <Route path="/garden">
           <Garden produceFilter={produceFilter} />
