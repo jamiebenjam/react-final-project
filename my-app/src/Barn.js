@@ -1,10 +1,10 @@
 import React from "react";
-import FarmItems from "./FarmItems";
+import Barden from "./Barden";
 
-function Barn({livestockFilter}) {
+function Barn({livestockFilter, setFarmItems}) {
 
   const mapLivestockItems = livestockFilter.map((item) => {
-    return <FarmItems
+    return <Barden
         item={item}
         key={item.id}
         id={item.id}
@@ -12,6 +12,7 @@ function Barn({livestockFilter}) {
         image={item.image}
         price={item.price}
         type={item.type}
+        setFarmItems={setFarmItems}
     
     />
 })

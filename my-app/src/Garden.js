@@ -1,10 +1,11 @@
   import React from "react";
-  import FarmItems from "./FarmItems";
+  import Barden from "./Barden";
+  
 
-function Garden({produceFilter}) {
+function Garden({produceFilter, setFarmItems}) {
 
   const mapProduceItems = produceFilter.map((item) => {
-    return <FarmItems
+    return <Barden
         item={item}
         key={item.id}
         id={item.id}
@@ -12,6 +13,7 @@ function Garden({produceFilter}) {
         image={item.image}
         price={item.price}
         type={item.type}
+        setFarmItems={setFarmItems}
     
     />
 })

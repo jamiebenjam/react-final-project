@@ -4,7 +4,7 @@ import { React, useState, useRef, useEffect } from 'react'
 
   function Clock( {count, setCount }) {
     
-  console.log(count)
+  // console.log(count)
     useInterval(() => {
       // Your custom logic here
       setCount(count + 1);

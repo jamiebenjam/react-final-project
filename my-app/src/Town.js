@@ -63,6 +63,7 @@ const mapFarmItems = getFilteredCategory().map((item) => {
         price={item.price}
         type={item.type}
         setMyFarmItems={setMyFarmItems}
+        setFarmItems={setFarmItems}
     />
 })
 
