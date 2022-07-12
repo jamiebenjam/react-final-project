@@ -42,7 +42,14 @@ function App() {
                 buy.type === "produce" ? "Garden" : "Barn"
               }.`
             );
-            return setMyFarmItems((prevState) => [...prevState, buy])
+            const leftOver = farmItems.filter((item) => {
+              if (item.id !== buy.id) {
+                return item;
+              }
+            });
+            
+            return setMyFarmItems((prevState) => [...prevState, buy]),
+            setFarmItems(leftOver)
     } else return alert(`You have already purchased your ${buy.name}. Try purchasing something you don't already own.`)
     //conditional
   //   console.log(myFarmItems)
@@ -81,6 +88,8 @@ function App() {
     });
     return setMyFarmItems(leftOver);
   }
+
+
 
   return (
     <div className="App">
