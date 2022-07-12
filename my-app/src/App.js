@@ -33,32 +33,43 @@ function App() {
   // Handle Buy/Sell
 //set something to purchase day as a non dynamic - day count  current day - day of purchse => harvest time
   function handleBuy(buy) {
-    //conditional
-    console.log(myFarmItems)
-    if (myFarmItems.length===0) {
+
+    const foundItem = myFarmItems.find((item) => item.id === buy.id)
+
+    if (!foundItem) {
       alert(
-        `Your ${buy.name} will be added to your ${
-          buy.type === "produce" ? "Garden" : "Barn"
-        }.`
-      );
-      return setMyFarmItems((prevState) => [...prevState, buy])
-    } else {
-      console.log("baddddd")
+              `Your ${buy.name} will be added to your ${
+                buy.type === "produce" ? "Garden" : "Barn"
+              }.`
+            );
+            return setMyFarmItems((prevState) => [...prevState, buy])
+    } else return alert(`You have already purchased your ${buy.name}. Try purchasing something you don't already own.`)
+    //conditional
+  //   console.log(myFarmItems)
+  //   if (myFarmItems.length===0) {
+  //     alert(
+  //       `Your ${buy.name} will be added to your ${
+  //         buy.type === "produce" ? "Garden" : "Barn"
+  //       }.`
+  //     );
+  //     return setMyFarmItems((prevState) => [...prevState, buy])
+  //   } else {
+  //     console.log("baddddd")
       
-    myFarmItems.find((item) => {
-      console.log(item.id)
-      console.log(buy.id)
-      if (item.id === buy.id) {
-        console.log("heyo")
-        return alert(`You have already purchased your ${buy.name}. Try purchasing something you don't already own.`)
-        // 
-      } else {alert( 
-        `Your second ${buy.name} will be added to your ${
-          buy.type === "produce" ? "Garden" : "Barn"
-        }.` 
-      ); return setMyFarmItems((prevState) => [...prevState, buy])}; 
-    });
-  }
+  //   myFarmItems.find((item) => {
+  //     console.log(item.id)
+  //     console.log(buy.id)
+  //     if (item.id === buy.id) {
+  //       console.log("heyo")
+  //       return alert(`You have already purchased your ${buy.name}. Try purchasing something you don't already own.`)
+  //       // 
+  //     } else {alert( 
+  //       `Your second ${buy.name} will be added to your ${
+  //         buy.type === "produce" ? "Garden" : "Barn"
+  //       }.` 
+  //     ); return setMyFarmItems((prevState) => [...prevState, buy])}; 
+  //   });
+  // }
   }
 
   function handleSell(sell) {
