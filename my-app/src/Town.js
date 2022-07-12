@@ -1,26 +1,25 @@
 import React, {useState} from "react";
 import FarmItems from "./FarmItems"
 
-function Town({farmItems, setMyFarmItems, setFarmItems}) {
+function Town({farmItems, setMyFarmItems, setFarmItems, poster, bank, setBank}) {
 
     const [category, setCategory] = useState()
     const [formState, setFormState] = useState({})
     
 
-    const {name, image, price, type} = formState
-
+    
     function handleSubmit(e) {
         e.preventDefault();
         const newFormObj = {
             name: name,
             image: image,
-            price: price,
+            price: (price*1),
             type: type,
             roi: (price*.25)
         }
         // setFarmItems((prevState) => ([...prevState, newFormObj]))
-
-        fetch("http://localhost:8000/farm", {
+        
+        fetch("http://localhost:3000/farm", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -28,9 +27,10 @@ function Town({farmItems, setMyFarmItems, setFarmItems}) {
             body: JSON.stringify(newFormObj),
         })
         .then((r) => r.json())
-        .then((data) => setFarmItems((prevState) => ([...prevState, data])))
+        .then((data) => poster((prevState) => ([...prevState, data])))
     }
-
+    
+    const {name, image, price, type} = formState
 
 
     function handleFormChange(e) {
@@ -55,6 +55,8 @@ function Town({farmItems, setMyFarmItems, setFarmItems}) {
 
 const mapFarmItems = getFilteredCategory().map((item) => {
     return <FarmItems
+        bank={bank}
+        setBank={setBank}
         item={item}
         key={item.id}
         id={item.id}
@@ -84,16 +86,16 @@ return (
 
             <h3>Don't see the animal you're looking for?</h3>
             <label htmlFor="name">Name</label>
-            <input onChange={handleFormChange} type="text" id="name" name="name" value={name}></input>
+            <input onChange={handleFormChange} type="text" id="name" name="name" ></input>
             
             <label htmlFor="image">Image</label>
-            <input onChange={handleFormChange} type="text" id="image" name="image" value={image}></input>
+            <input onChange={handleFormChange} type="text" id="image" name="image" ></input>
 
             <label htmlFor="price">Price</label>
-            <input onChange={handleFormChange} type="text" id="price" name="price" value={price}></input>
+            <input onChange={handleFormChange} type="number" id="price" name="price" ></input>
 
             <label htmlFor="type">Type</label>
-            <select onChange={handleFormChange} id="type" name="type" value={type}>
+            <select onChange={handleFormChange} id="type" name="type" >
                 <option>Select One</option>
                 <option value="produce">Produce</option>
                 <option value="livestock">Livestock</option>

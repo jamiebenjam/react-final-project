@@ -83,10 +83,26 @@
     {
       "name": "Emu",
       "image": "https://i.pinimg.com/736x/b3/36/c9/b336c9678983af6ff963dd812b69f20c--emu-zoo-animals.jpg",
-      "price": "1000",
+      "price": 1000,
       "type": "livestock",
       "roi": 250,
       "id": 11
+    },
+    {
+      "name": "Peacock",
+      "image": "https://static.vecteezy.com/system/resources/previews/003/194/769/non_2x/cartoon-funny-peacock-bird-vector.jpg",
+      "price": 750,
+      "type": "livestock",
+      "roi": 187.5,
+      "id": 12
+    },
+    {
+      "name": "Honey Badger",
+      "image": "https://ih1.redbubble.net/image.780939551.6276/st,small,507x507-pad,600x600,f8f8f8.u2.jpg",
+      "price": 500,
+      "type": "livestock",
+      "roi": 125,
+      "id": 13
     }
   ]
 }

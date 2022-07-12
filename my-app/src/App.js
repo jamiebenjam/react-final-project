@@ -13,7 +13,7 @@ function App() {
   const [farmItems, setFarmItems] = useState([]);
   const [count, setCount] = useState(0);
   const [myFarmItems, setMyFarmItems] = useState([]);
-  const [bank, setBank] = useState("1200");
+  const [bank, setBank] = useState(1200);
 
   function fetchFarm() {
     fetch("http://localhost:3000/farm")
@@ -49,34 +49,9 @@ function App() {
             });
             
             return setMyFarmItems((prevState) => [...prevState, buy]),
-            setFarmItems(leftOver)
-    } else return alert(`You have already purchased your ${buy.name}. Try purchasing something you don't already own.`)
-    //conditional
-  //   console.log(myFarmItems)
-  //   if (myFarmItems.length===0) {
-  //     alert(
-  //       `Your ${buy.name} will be added to your ${
-  //         buy.type === "produce" ? "Garden" : "Barn"
-  //       }.`
-  //     );
-  //     return setMyFarmItems((prevState) => [...prevState, buy])
-  //   } else {
-  //     console.log("baddddd")
-      
-  //   myFarmItems.find((item) => {
-  //     console.log(item.id)
-  //     console.log(buy.id)
-  //     if (item.id === buy.id) {
-  //       console.log("heyo")
-  //       return alert(`You have already purchased your ${buy.name}. Try purchasing something you don't already own.`)
-  //       // 
-  //     } else {alert( 
-  //       `Your second ${buy.name} will be added to your ${
-  //         buy.type === "produce" ? "Garden" : "Barn"
-  //       }.` 
-  //     ); return setMyFarmItems((prevState) => [...prevState, buy])}; 
-  //   });
-  // }
+            setFarmItems(leftOver),
+            setBank((monies) => monies - buy.price)
+    } else return alert(`You have already purchased your ${buy.name}. Try purchasing something you don't already own.`)       
   }
 
   function handleSell(sell) {
@@ -86,7 +61,9 @@ function App() {
         return item;
       }
     });
-    return setMyFarmItems(leftOver);
+    return setMyFarmItems(leftOver),
+            setBank((monies) =>(monies + sell.price)),
+            setFarmItems((items) => ([...items, sell]))
   }
 
 
@@ -102,6 +79,9 @@ function App() {
         </Route>
         <Route path="/town">
           <Town
+            bank={bank}
+            setBank={setBank}
+            poster={setFarmItems}
             setFarmItems={handleBuy}
             farmItems={farmItems}
             setMyFarmItems={setMyFarmItems}
