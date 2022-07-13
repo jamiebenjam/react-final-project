@@ -10,6 +10,7 @@ import Garden from "./Garden";
 import Barn from "./Barn";
 import Music from "./CodeeRanchTheme.mp3"
 import AudioPlayer from "./AudioPlayer"
+import { Container } from "semantic-ui-react";
 
 function App() {
   const [farmItems, setFarmItems] = useState([]);
@@ -75,35 +76,37 @@ function App() {
 
 
   return (
-    <div className="App">
-      <AudioPlayer music={Music}/>
-      <Map />
-      <Clock speed={speed} count={count} setCount={setCount} />
-      <img style={{ height: 350, width: 550 }} src={table}></img>
-      <Switch>
-        <Route exact path="/">
-          <TheRanch setSpeed={setSpeed} speed={speed} bank={bank} />
-        </Route>
-        <Route path="/town">
-          <Town
-            count={count}
-            bank={bank}
-            setBank={setBank}
-            poster={setFarmItems}
-            setFarmItems={handleBuy}
-            farmItems={farmItems}
-            setMyFarmItems={setMyFarmItems}
-          />
-        </Route>
-        <Route path="/garden">
-          <Garden produceFilter={produceFilter} setFarmItems={handleSell} />
-        </Route>
-        <Route path="/barn">
-          <Barn livestockFilter={livestockFilter} setFarmItems={handleSell} />
-        </Route>
-      </Switch>
-      <audio src="./CodeeRanchTheme.mp3"></audio>
-    </div>
+    <Container>
+      <div className="App">
+        <AudioPlayer music={Music}/>
+        <Map />
+        <Clock speed={speed} count={count} setCount={setCount} />
+        <img style={{ height: 350, width: 550 }} src={table}></img>
+        <Switch>
+          <Route exact path="/">
+            <TheRanch setSpeed={setSpeed} speed={speed} bank={bank} />
+          </Route>
+          <Route path="/town">
+            <Town
+              count={count}
+              bank={bank}
+              setBank={setBank}
+              poster={setFarmItems}
+              setFarmItems={handleBuy}
+              farmItems={farmItems}
+              setMyFarmItems={setMyFarmItems}
+            />
+          </Route>
+          <Route path="/garden">
+            <Garden produceFilter={produceFilter} setFarmItems={handleSell} />
+          </Route>
+          <Route path="/barn">
+            <Barn livestockFilter={livestockFilter} setFarmItems={handleSell} />
+          </Route>
+        </Switch>
+        <audio src="./CodeeRanchTheme.mp3"></audio>
+      </div>
+    </Container>
   );
 }
 

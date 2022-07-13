@@ -1,0 +1,7 @@
+#container {
+    flex-wrap: wrap;
+  }
+
+#the-ranch {
+    background-color: grey
+}

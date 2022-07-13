@@ -1,5 +1,7 @@
 import React, {useState} from "react";
-import FarmItems from "./FarmItems"
+import FarmItems from "./FarmItems";
+import { Card } from "semantic-ui-react";
+import "./App.css"
 
 function Town({farmItems, setMyFarmItems, setFarmItems, poster, bank, setBank, count}) {
 
@@ -81,7 +83,11 @@ return (
           <option value="livestock">Livestock</option>
         </select>
       </label>
-        {mapFarmItems}
+        <Card.Group itemsPerRow={3}>
+            <div id="container">
+                {mapFarmItems}
+            </div>
+        </Card.Group>  
 
         <form onSubmit={handleSubmit} className="form">
 

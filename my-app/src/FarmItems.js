@@ -1,3 +1,5 @@
+import { Card } from "semantic-ui-react";
+
 function FarmItems({id, name, image, price, type, setMyFarmItems, item, setFarmItems, bank, setBank, count}) {
 
     function handleClick() {
@@ -14,16 +16,18 @@ function FarmItems({id, name, image, price, type, setMyFarmItems, item, setFarmI
 
 
     return (
-        <div >
-            <button onClick={handleClick}> Purchase
-            <p>{name}</p>
-            <img style={{height : 150, width: 150}} src={image} alt="it worked"></img>
-            <p>${price}</p>
-            <p>{type}</p>
-            <p>ROI: {((item.roi - 1)*100).toFixed(0)}%</p>
-            <p>Growth period: {item.mature} days</p>
-            </button>
-        </div>
+        <Card>
+            <div >
+                <button onClick={handleClick}> Purchase
+                <p>{name}</p>
+                <img style={{height : 150, width: 150}} src={image} alt="it worked"></img>
+                <p>${price}</p>
+                <p>{type}</p>
+                <p>ROI: {((item.roi - 1)*100).toFixed(0)}%</p>
+                <p>Growth period: {item.mature} days</p>
+                </button>
+            </div>
+        </Card>
     )
 }
 
