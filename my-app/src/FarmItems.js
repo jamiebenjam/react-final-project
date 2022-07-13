@@ -1,25 +1,30 @@
-function FarmItems({id, name, image, price, type, setMyFarmItems, item, setFarmItems, bank, setBank}) {
+function FarmItems({id, name, image, price, type, setMyFarmItems, item, setFarmItems, bank, setBank, count}) {
 
     function handleClick() {
         if (bank < item.price) {
             return alert("You do not have enough money")
-        } else 
-        setFarmItems(item)
-        // funciton from App two functions passed as one prop with two names and where it was derived (farm/garden or town) will execute the diff functions +$ or -$
-        // generate a dynamic state const const state = `${item.name}Life const setState = set`${item.name}Life
-        // console.log(item)
+        } else {
+            item.birthday = count; 
+            console.log(item)
+            setFarmItems(item)
+        }
+       
+        
     }
+
 
     return (
         <div >
             <button onClick={handleClick}> Purchase
             <p>{name}</p>
             <img style={{height : 150, width: 150}} src={image} alt="it worked"></img>
-            <p>{price}</p>
+            <p>${price}</p>
+            <p>ROI: {item.roi}</p>
             <p>{type}</p>
             </button>
         </div>
     )
 }
+
 
 export default FarmItems;

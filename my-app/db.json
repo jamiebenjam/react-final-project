@@ -4,104 +4,104 @@
       "id": 1,
       "name": "pig",
       "image": "https://img.freepik.com/premium-vector/cute-pig-is-sitting-with-two-finger-cartoon-illustration_403370-527.jpg?w=2000",
-      "price": 100,
+      "price": 89.99,
       "type": "livestock",
-      "roi": 25
+      "roi": 1.13
     },
     {
       "id": 2,
       "name": "cow",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQddVPS-OMPV98uPx2MAw3RC-frWWl3kM2MCw&usqp=CAU",
-      "price": 200,
+      "price": 249.99,
       "type": "livestock",
-      "roi": 50
+      "roi": 1.09
     },
     {
       "id": 3,
       "name": "chicken",
       "image": "https://illustoon.com/photo/3088.png",
-      "price": 200,
+      "price": 24.99,
       "type": "livestock",
-      "roi": 50
+      "roi": 1.1
     },
     {
       "id": 4,
       "name": "donkey",
       "image": "https://img.freepik.com/premium-vector/cartoon-donkey_29190-3797.jpg?w=2000",
-      "price": 200,
+      "price": 99.99,
       "type": "livestock",
-      "roi": 50
+      "roi": 1.08
     },
     {
       "id": 5,
       "name": "horse",
       "image": "https://t4.ftcdn.net/jpg/01/81/13/21/360_F_181132139_LvK7VMdCinOvQlywwoCRdsuJ8Z9l1vYC.jpg",
-      "price": 200,
+      "price": 299.99,
       "type": "livestock",
-      "roi": 50
+      "roi": 1.07
     },
     {
       "id": 6,
       "name": "corn",
       "image": "https://t4.ftcdn.net/jpg/04/96/25/21/360_F_496252168_AveA4lS6p1cILHQXtNcfB9uj2dIXLX2Z.jpg",
-      "price": 50,
+      "price": 6,
       "type": "produce",
-      "roi": 20
+      "roi": 1.05
     },
     {
       "id": 7,
       "name": "wheat",
       "image": "data:image/jpeg;base64,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",
-      "price": 50,
+      "price": 7,
       "type": "produce",
-      "roi": 20
+      "roi": 1.1
     },
     {
       "id": 8,
       "name": "potato",
       "image": "https://t3.ftcdn.net/jpg/00/62/94/84/360_F_62948408_fXgxzfvxkqPPj9HhfEO1m282QgCFTkmz.jpg",
-      "price": 50,
+      "price": 5,
       "type": "produce",
-      "roi": 20
+      "roi": 1.01
     },
     {
       "id": 9,
       "name": "green bean",
       "image": "https://as2.ftcdn.net/v2/jpg/01/11/87/81/1000_F_111878150_exe8mS97qba9wchqTxD8Ns7hgg31WuC0.jpg",
-      "price": 50,
+      "price": 8,
       "type": "produce",
-      "roi": 20
+      "roi": 1.15
     },
     {
       "id": 10,
       "name": "apple",
       "image": "https://media.istockphoto.com/vectors/cartoon-apple-vector-id482802653?k=20&m=482802653&s=170667a&w=0&h=6Mklld6r16829xd_1py4zUV9lNKrRCEsADLThNe6Q_8=",
-      "price": 50,
+      "price": 10,
       "type": "produce",
-      "roi": 20
+      "roi": 1.2
     },
     {
       "name": "Emu",
       "image": "https://i.pinimg.com/736x/b3/36/c9/b336c9678983af6ff963dd812b69f20c--emu-zoo-animals.jpg",
-      "price": 1000,
+      "price": 999.99,
       "type": "livestock",
-      "roi": 250,
+      "roi": 1.02,
       "id": 11
     },
     {
       "name": "Peacock",
       "image": "https://static.vecteezy.com/system/resources/previews/003/194/769/non_2x/cartoon-funny-peacock-bird-vector.jpg",
-      "price": 750,
+      "price": 749.99,
       "type": "livestock",
-      "roi": 187.5,
+      "roi": 1.03,
       "id": 12
     },
     {
       "name": "Honey Badger",
       "image": "https://ih1.redbubble.net/image.780939551.6276/st,small,507x507-pad,600x600,f8f8f8.u2.jpg",
-      "price": 500,
+      "price": 499.99,
       "type": "livestock",
-      "roi": 125,
+      "roi": 1.04,
       "id": 13
     }
   ]

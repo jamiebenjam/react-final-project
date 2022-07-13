@@ -11,16 +11,21 @@ import Barn from "./Barn";
 
 function App() {
   const [farmItems, setFarmItems] = useState([]);
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   const [myFarmItems, setMyFarmItems] = useState([]);
-  const [bank, setBank] = useState(1200);
+  const [bank, setBank] = useState(50);
+  const [speed, setSpeed] = useState(null);
 
   function fetchFarm() {
-    fetch("http://localhost:3000/farm")
+    fetch("http://localhost:8000/farm")
       .then((r) => r.json())
       .then((farmData) => setFarmItems(farmData));
   }
   useEffect(fetchFarm, []);
+
+  function birth() {
+
+  }
 
   // console.log(myFarmItems);
 
@@ -55,14 +60,19 @@ function App() {
   }
 
   function handleSell(sell) {
+    let adult = (sell.birthday +10)
+    if (adult >= count) {
+      return alert(`Your ${sell.name} is not old enough to take to market. Please wait ${adult - count} days.`)
+    }
     console.log("Sailed");
     const leftOver = myFarmItems.filter((item) => {
       if (item.id !== sell.id) {
-        return item;
+        return  item;
       }
     });
     return setMyFarmItems(leftOver),
-            setBank((monies) =>(monies + sell.price)),
+            setBank((monies) =>(monies + sell.price*((count - adult) * sell.roi))),
+            alert(`You have sold your ${sell.name} for $${((sell.price)*((count - adult) * sell.roi)).toFixed(2)}!`),
             setFarmItems((items) => ([...items, sell]))
   }
 
@@ -71,14 +81,15 @@ function App() {
   return (
     <div className="App">
       <Map />
-      <Clock count={count} setCount={setCount} />
+      <Clock speed={speed} count={count} setCount={setCount} />
       <img style={{ height: 350, width: 550 }} src={table}></img>
       <Switch>
         <Route exact path="/">
-          <TheRanch bank={bank} />
+          <TheRanch setSpeed={setSpeed} bank={bank} />
         </Route>
         <Route path="/town">
           <Town
+            count={count}
             bank={bank}
             setBank={setBank}
             poster={setFarmItems}

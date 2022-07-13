@@ -2,13 +2,13 @@ import { React, useState, useRef, useEffect } from 'react'
 
 
 
-  function Clock( {count, setCount }) {
+  function Clock( {count, setCount, speed }) {
     
   // console.log(count)
     useInterval(() => {
       // Your custom logic here
       setCount(count + 1);
-    }, 10000);
+    }, speed);
   
     return <h1>Day: {count}</h1>;
   }

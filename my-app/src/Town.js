@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import FarmItems from "./FarmItems"
 
-function Town({farmItems, setMyFarmItems, setFarmItems, poster, bank, setBank}) {
+function Town({farmItems, setMyFarmItems, setFarmItems, poster, bank, setBank, count}) {
 
     const [category, setCategory] = useState()
     const [formState, setFormState] = useState({})
@@ -19,7 +19,7 @@ function Town({farmItems, setMyFarmItems, setFarmItems, poster, bank, setBank}) 
         }
         // setFarmItems((prevState) => ([...prevState, newFormObj]))
         
-        fetch("http://localhost:3000/farm", {
+        fetch("http://localhost:8000/farm", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -55,6 +55,7 @@ function Town({farmItems, setMyFarmItems, setFarmItems, poster, bank, setBank}) 
 
 const mapFarmItems = getFilteredCategory().map((item) => {
     return <FarmItems
+        count={count}
         bank={bank}
         setBank={setBank}
         item={item}
