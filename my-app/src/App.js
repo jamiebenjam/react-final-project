@@ -9,12 +9,13 @@ import Clock from "./Clock";
 import Garden from "./Garden";
 import Barn from "./Barn";
 import Music from "./CodeeRanchTheme.mp3"
+import AudioPlayer from "./AudioPlayer"
 
 function App() {
   const [farmItems, setFarmItems] = useState([]);
   const [count, setCount] = useState(1);
   const [myFarmItems, setMyFarmItems] = useState([]);
-  const [bank, setBank] = useState(50);
+  const [bank, setBank] = useState(10);
   const [speed, setSpeed] = useState(null);
 
   function fetchFarm() {
@@ -75,6 +76,7 @@ function App() {
 
   return (
     <div className="App">
+      <AudioPlayer music={Music}/>
       <Map />
       <Clock speed={speed} count={count} setCount={setCount} />
       <img style={{ height: 350, width: 550 }} src={table}></img>
