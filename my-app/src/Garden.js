@@ -2,7 +2,7 @@
   import Barden from "./Barden";
   
 
-function Garden({produceFilter, setFarmItems}) {
+function Garden({produceFilter, setFarmItems, count, adult}) {
 
   const mapProduceItems = produceFilter.map((item) => {
     return <Barden
@@ -14,6 +14,7 @@ function Garden({produceFilter, setFarmItems}) {
         price={item.price}
         type={item.type}
         setFarmItems={setFarmItems}
+        
     
     />
 })

@@ -8,6 +8,7 @@ import TheRanch from "./TheRanch";
 import Clock from "./Clock";
 import Garden from "./Garden";
 import Barn from "./Barn";
+import Music from "./CodeeRanchTheme.mp3"
 
 function App() {
   const [farmItems, setFarmItems] = useState([]);
@@ -17,18 +18,13 @@ function App() {
   const [speed, setSpeed] = useState(null);
 
   function fetchFarm() {
-    fetch("http://localhost:8000/farm")
+    fetch("http://localhost:3000/farm")
       .then((r) => r.json())
       .then((farmData) => setFarmItems(farmData));
   }
   useEffect(fetchFarm, []);
 
-  function birth() {
-
-  }
-
-  // console.log(myFarmItems);
-
+  
   const produceFilter = myFarmItems.filter((item) => item.type === "produce");
 
   const livestockFilter = myFarmItems.filter(
@@ -36,7 +32,6 @@ function App() {
   );
 
   // Handle Buy/Sell
-//set something to purchase day as a non dynamic - day count  current day - day of purchse => harvest time
   function handleBuy(buy) {
 
     const foundItem = myFarmItems.find((item) => item.id === buy.id)
@@ -60,7 +55,7 @@ function App() {
   }
 
   function handleSell(sell) {
-    let adult = (sell.birthday +10)
+    let adult = (sell.birthday + sell.mature)
     if (adult >= count) {
       return alert(`Your ${sell.name} is not old enough to take to market. Please wait ${adult - count} days.`)
     }
@@ -85,7 +80,7 @@ function App() {
       <img style={{ height: 350, width: 550 }} src={table}></img>
       <Switch>
         <Route exact path="/">
-          <TheRanch setSpeed={setSpeed} bank={bank} />
+          <TheRanch setSpeed={setSpeed} speed={speed} bank={bank} />
         </Route>
         <Route path="/town">
           <Town
@@ -105,6 +100,7 @@ function App() {
           <Barn livestockFilter={livestockFilter} setFarmItems={handleSell} />
         </Route>
       </Switch>
+      <audio src="./CodeeRanchTheme.mp3"></audio>
     </div>
   );
 }

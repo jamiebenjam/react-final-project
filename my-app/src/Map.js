@@ -5,9 +5,9 @@ function Map() {
     return (
         <div>
             <h1>Farmville</h1>
-            <NavLink to="/town">Town</NavLink>
+            <NavLink to="/town">Market</NavLink>
             <br></br>
-            <NavLink to="/">The Ranch</NavLink>
+            <NavLink to="/">Codee Ranch</NavLink>
             <br></br>
             <NavLink to="/garden">Garden</NavLink>
             <br></br>

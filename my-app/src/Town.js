@@ -19,7 +19,7 @@ function Town({farmItems, setMyFarmItems, setFarmItems, poster, bank, setBank, c
         }
         // setFarmItems((prevState) => ([...prevState, newFormObj]))
         
-        fetch("http://localhost:8000/farm", {
+        fetch("http://localhost:3000/farm", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 
-function Barden({id, name, image, price, type, setMyFarmItems, item, setFarmItems}) {
+function Barden({id, name, image, price, type, setMyFarmItems, item, setFarmItems, adult, count}) {
 
 
     function handleClick() {
@@ -19,7 +19,7 @@ function Barden({id, name, image, price, type, setMyFarmItems, item, setFarmItem
             <button onClick={handleClick}> Harvest
             <p>{name}</p>
             <img style={{height : 150, width: 150}} src={image} alt="it worked"></img>
-            <p>{price}</p>
+            <p>Growth period: {item.mature} days</p>
             <p>{type}</p>
             </button>
 
