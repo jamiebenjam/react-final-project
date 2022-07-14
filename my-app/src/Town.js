@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import FarmItems from "./FarmItems";
-import { Card } from "semantic-ui-react";
+// import { Card } from "semantic-ui-react";
 import "./App.css"
 
 function Town({farmItems, setMyFarmItems, setFarmItems, poster, bank, setBank, count}) {
@@ -76,18 +76,16 @@ return (
     <div>
         <h1>General Store</h1>
     <label>
-        <strong>Filter: </strong>
+        <strong>What are you looking for today? </strong>
         <select onChange={handleChange}>
          <option value="">All</option>
           <option value="produce">Produce</option>
           <option value="livestock">Livestock</option>
         </select>
       </label>
-        <Card.Group itemsPerRow={3}>
             <div id="container">
-                {mapFarmItems}
+                <ul className="farmList"> {mapFarmItems}</ul>
             </div>
-        </Card.Group>  
 
         <form onSubmit={handleSubmit} className="form">
 

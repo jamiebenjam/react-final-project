@@ -1,5 +1,6 @@
   import React from "react";
   import Barden from "./Barden";
+  import styled from "styled-components";
   
 
 function Garden({produceFilter, setFarmItems, count, adult}) {
@@ -21,10 +22,23 @@ function Garden({produceFilter, setFarmItems, count, adult}) {
 })
 
   return (
+    <GardenDetail>
     <div>
+      <h1 className="garden-header">Garden</h1>
       {mapProduceItems}
     </div>
+    </GardenDetail>
   )
 }
 
 export default Garden;
+
+const GardenDetail = styled.div`
+    .garden-header {
+        background-color: red;
+        color: white;
+       
+    }
+   
+
+`

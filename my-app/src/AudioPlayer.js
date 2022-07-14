@@ -4,7 +4,7 @@ function AudioPlayer({music}) {
    
    return(
     <div>
-        <h1>Codee Ranch Theme</h1>
+        <h1 className="codeeRanch">Codee Ranch</h1>
         <audio src={music} controls loop/>
     </div>
    )

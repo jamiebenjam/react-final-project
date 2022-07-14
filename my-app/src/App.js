@@ -10,7 +10,7 @@ import Garden from "./Garden";
 import Barn from "./Barn";
 import Music from "./CodeeRanchTheme.mp3"
 import AudioPlayer from "./AudioPlayer"
-import { Container } from "semantic-ui-react";
+// import { Container } from "semantic-ui-react";
 
 function App() {
   const [farmItems, setFarmItems] = useState([]);
@@ -20,7 +20,7 @@ function App() {
   const [speed, setSpeed] = useState(null);
 
   function fetchFarm() {
-    fetch("http://localhost:3000/farm")
+    fetch("http://localhost:8000/farm")
       .then((r) => r.json())
       .then((farmData) => setFarmItems(farmData));
   }
@@ -76,7 +76,7 @@ function App() {
 
 
   return (
-    <Container>
+    <body>
       <div className="App">
         <AudioPlayer music={Music}/>
         <Map />
@@ -106,7 +106,7 @@ function App() {
         </Switch>
         <audio src="./CodeeRanchTheme.mp3"></audio>
       </div>
-    </Container>
+      </body>
   );
 }
 

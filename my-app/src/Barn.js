@@ -20,6 +20,7 @@ function Barn({livestockFilter, setFarmItems, count, adult}) {
 })
     return (
         <div>
+            <h1>Barn</h1>
             {mapLivestockItems}
         </div>
     )

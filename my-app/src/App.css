@@ -1,7 +1,15 @@
-#container {
-    flex-wrap: wrap;
-  }
+body {
+  background-image: url("grass.jpeg")
+}
 
-#the-ranch {
-    background-color: white
+.codeeRanch {
+  font-size: 75px
+}
+
+#container {
+ 
+}
+
+ul > li {
+  display: inline-block;
 }

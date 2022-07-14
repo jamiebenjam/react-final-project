@@ -1,0 +1,26 @@
+
+
+@font-face {
+    font-family: Coventry;
+    src: url(docktrin.ttf);
+    font-style: normal;
+    font-weight: lighter;
+}
+
+div{
+    font-family: Coventry;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+h1 {
+    background-color: #3b220e;
+    color: white;
+    font-family: Coventry;
+}
+
+.navDiv {
+    color: black;
+    font-size: 30px;
+}
