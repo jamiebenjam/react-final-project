@@ -1,7 +1,10 @@
 import React from "react";
 import Barden from "./Barden";
 
-function Barn({livestockFilter, setFarmItems, count, adult}) {
+function Barn({livestockFilter, setFarmItems, count, adult, speed}) {
+    if(!speed) {
+        alert("Please return to Codee Ranch and select a speed")
+    } else {
 
   const mapLivestockItems = livestockFilter.map((item) => {
     return <Barden
@@ -25,6 +28,6 @@ function Barn({livestockFilter, setFarmItems, count, adult}) {
             {mapLivestockItems}
         </div>
     )
-}
+}}
 
 export default Barn;

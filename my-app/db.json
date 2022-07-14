@@ -52,7 +52,7 @@
       "price": 6,
       "type": "produce",
       "roi": 1.35,
-      "mature": 3 
+      "mature": 3
     },
     {
       "id": 7,
@@ -116,6 +116,15 @@
       "roi": 1.34,
       "id": 13,
       "mature": 18
+    },
+    {
+      "name": "Pickle",
+      "image": "https://www.pngkey.com/png/full/27-277845_pickle-rick-rick-and-morty-pixel-art-pickle.png",
+      "price": 13,
+      "type": "produce",
+      "roi": "1.26",
+      "mature": 14,
+      "id": 14
     }
   ]
 }

@@ -3,7 +3,10 @@
   import styled from "styled-components";
   
 
-function Garden({produceFilter, setFarmItems, count, adult}) {
+function Garden({produceFilter, setFarmItems, count, adult, speed}) {
+  if (!speed) {
+    alert("Please return to Codee Ranch and select a speed")
+  } else {
 
   const mapProduceItems = produceFilter.map((item) => {
     return <Barden
@@ -30,7 +33,7 @@ function Garden({produceFilter, setFarmItems, count, adult}) {
     </div>
     </GardenDetail>
   )
-}
+}}
 
 export default Garden;
 

@@ -3,13 +3,20 @@ import FarmItems from "./FarmItems";
 // import { Card } from "semantic-ui-react";
 import "./App.css"
 
-function Town({farmItems, setMyFarmItems, setFarmItems, poster, bank, setBank, count}) {
-
+function Town({farmItems, setMyFarmItems, setFarmItems, poster, bank, setBank, count, speed}) {
     const [category, setCategory] = useState()
     const [formState, setFormState] = useState({})
-    
+
+    if (!speed) {
+        alert("Please return to Codee Ranch and select a speed")
+    } else {
 
     
+    let random = (Math.random() + 1).toFixed(2)
+    let matRandom = Math.floor(Math.random()*20)
+
+    console.log(matRandom)
+     
     function handleSubmit(e) {
         e.preventDefault();
         const newFormObj = {
@@ -17,7 +24,8 @@ function Town({farmItems, setMyFarmItems, setFarmItems, poster, bank, setBank, c
             image: image,
             price: (price*1),
             type: type,
-            roi: (price*.25)
+            roi: random, 
+            mature: matRandom
         }
         // setFarmItems((prevState) => ([...prevState, newFormObj]))
         
@@ -115,6 +123,6 @@ return (
         </form>
     </div>
 )
-}
+}}
 
 export default Town;

@@ -17,9 +17,21 @@ function App() {
   const [myFarmItems, setMyFarmItems] = useState([]);
   const [bank, setBank] = useState(10);
   const [speed, setSpeed] = useState(null);
+  const [name, setName] = useState("")
+
+  
+
+  useEffect(() => {
+    let userName = window.prompt("Hi welcome to Codee Ranch!", "Enter Player 1 name");
+    setName(userName)}, 
+    [])
+    
+
+
+  console.log(name)
 
   function fetchFarm() {
-    fetch("http://localhost:8000/farm")
+    fetch("http://localhost:3000/farm")
       .then((r) => r.json())
       .then((farmData) => setFarmItems(farmData));
   }
@@ -68,7 +80,7 @@ function App() {
     });
     return setMyFarmItems(leftOver),
             setBank((monies) =>(monies + sell.price*((count - adult) * sell.roi))),
-            alert(`You have sold your ${sell.name} for $${((sell.price)*((count - adult) * sell.roi)).toFixed(2)}!`),
+            alert(`You have sold your ${sell.name} for $${((sell.price)*((count - adult) * sell.roi)).toFixed(2)}💸!`),
             setFarmItems((items) => ([...items, sell]))
   }
 
@@ -82,7 +94,7 @@ function App() {
         <Clock speed={speed} count={count} setCount={setCount} />
         <Switch>
           <Route exact path="/">
-            <TheRanch setSpeed={setSpeed} speed={speed} bank={bank} />
+            <TheRanch setSpeed={setSpeed} speed={speed} bank={bank} user={name} />
           </Route>
           <Route path="/town">
             <Town
@@ -93,18 +105,19 @@ function App() {
               setFarmItems={handleBuy}
               farmItems={farmItems}
               setMyFarmItems={setMyFarmItems}
+              speed={speed}
             />
           </Route>
           <Route path="/garden">
-            <Garden produceFilter={produceFilter} setFarmItems={handleSell} count={count} />
+            <Garden produceFilter={produceFilter} setFarmItems={handleSell} count={count} speed={speed} />
           </Route>
           <Route path="/barn">
-            <Barn livestockFilter={livestockFilter} setFarmItems={handleSell} count={count} />
+            <Barn livestockFilter={livestockFilter} setFarmItems={handleSell} count={count} speed={speed} />
           </Route>
         </Switch>
         <audio src="./CodeeRanchTheme.mp3"></audio>
       </div>
-      </body>
+    </body>
   );
 }
 
