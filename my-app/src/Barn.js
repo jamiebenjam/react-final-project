@@ -20,6 +20,7 @@ function Barn({livestockFilter, setFarmItems, count, adult}) {
 })
     return (
         <div>
+            <img className="marketpic" src="https://cdnb.artstation.com/p/assets/images/images/045/035/031/large/joshua-white-barn.jpg?1641774675"></img>
             <h1>Barn</h1>
             {mapLivestockItems}
         </div>

@@ -24,6 +24,7 @@ function Garden({produceFilter, setFarmItems, count, adult}) {
   return (
     <GardenDetail>
     <div>
+      <img src="https://i.redd.it/hprs7qwto2061.png"></img>
       <h1 className="garden-header">Garden</h1>
       {mapProduceItems}
     </div>
@@ -34,11 +35,11 @@ function Garden({produceFilter, setFarmItems, count, adult}) {
 export default Garden;
 
 const GardenDetail = styled.div`
-    .garden-header {
-        background-color: red;
-        color: white;
+    // .garden-header {
+    //     background-color: red;
+    //     color: white;
        
-    }
+    // }
    
 
 `

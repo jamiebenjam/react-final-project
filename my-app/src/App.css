@@ -1,5 +1,6 @@
 body {
-  background-image: url("grass.jpeg")
+  background-image: url("grass.jpeg");
+  color: #edeac7
 }
 
 .codeeRanch {
@@ -12,4 +13,9 @@ body {
 
 ul > li {
   display: inline-block;
+}
+
+.marketpic {
+  width: 366px;
+  height: 366px;
 }

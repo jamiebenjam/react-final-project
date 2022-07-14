@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Map from "./Map";
-import table from "./table1.jpeg";
 import Town from "./Town";
 import { Route, Switch } from "react-router-dom";
 import TheRanch from "./TheRanch";
@@ -81,7 +80,6 @@ function App() {
         <AudioPlayer music={Music}/>
         <Map />
         <Clock speed={speed} count={count} setCount={setCount} />
-        <img style={{ height: 350, width: 550 }} src={table}></img>
         <Switch>
           <Route exact path="/">
             <TheRanch setSpeed={setSpeed} speed={speed} bank={bank} />

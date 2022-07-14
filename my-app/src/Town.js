@@ -74,6 +74,7 @@ const mapFarmItems = getFilteredCategory().map((item) => {
 
 return (
     <div>
+        <img className="marketpic" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/234f95e2-eb25-4123-8220-0fc869e8ed77/dbuo3xg-72de597e-5828-4352-90d1-a47c4937f5bf.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzIzNGY5NWUyLWViMjUtNDEyMy04MjIwLTBmYzg2OWU4ZWQ3N1wvZGJ1bzN4Zy03MmRlNTk3ZS01ODI4LTQzNTItOTBkMS1hNDdjNDkzN2Y1YmYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.bYbhs71YUrDkUWsgUy_KliJ6FUSHu6BfOhLCWM8X2sU"></img>
         <h1>General Store</h1>
     <label>
         <strong>What are you looking for today? </strong>
