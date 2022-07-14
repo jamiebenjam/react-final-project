@@ -14,6 +14,7 @@ function Garden({produceFilter, setFarmItems, count, adult}) {
         price={item.price}
         type={item.type}
         setFarmItems={setFarmItems}
+        count={count}
         
     
     />

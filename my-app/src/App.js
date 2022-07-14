@@ -98,10 +98,10 @@ function App() {
             />
           </Route>
           <Route path="/garden">
-            <Garden produceFilter={produceFilter} setFarmItems={handleSell} />
+            <Garden produceFilter={produceFilter} setFarmItems={handleSell} count={count} />
           </Route>
           <Route path="/barn">
-            <Barn livestockFilter={livestockFilter} setFarmItems={handleSell} />
+            <Barn livestockFilter={livestockFilter} setFarmItems={handleSell} count={count} />
           </Route>
         </Switch>
         <audio src="./CodeeRanchTheme.mp3"></audio>
