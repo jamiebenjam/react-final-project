@@ -31,7 +31,7 @@ function App() {
   console.log(name)
 
   function fetchFarm() {
-    fetch("http://localhost:3000/farm")
+    fetch("http://localhost:8000/farm")
       .then((r) => r.json())
       .then((farmData) => setFarmItems(farmData));
   }
