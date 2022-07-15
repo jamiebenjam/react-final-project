@@ -8,15 +8,11 @@ function TheRanch ( {bank, setBank, setSpeed, speed, user}) {
         console.log(e.target.value)
     }
 
-    const goal = 30010
-    const remainder = (goal - bank).toFixed(2)
-
 
     return (
         <div id="the-ranch">
             <img src={ranch}></img>
-            <h1>Bank Debt: {remainder > 0 ? new Intl.NumberFormat('us-US', { style: 'currency', currency: 'USD' }).format(remainder) : alert(`${user}! You saved Codee Ranch and restored the family name!!!!! You green thumb, you!`)}</h1>
-            <h1>Bank Account: {new Intl.NumberFormat('us-US', { style: 'currency', currency: 'USD' }).format(bank)}</h1>
+            <br></br>
             <label htmlFor="type">Speed: </label>
             <select onChange={handleSpeedChange} id="type" name="type" >
                 <option value={speed}>Select One</option>

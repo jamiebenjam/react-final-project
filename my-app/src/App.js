@@ -86,8 +86,8 @@ function App() {
   return (
     <body>
       <div className="App">
-        <AudioPlayer music={Music}/>
-        <Map />
+        <AudioPlayer user={name} music={Music}/>
+        <Map bank={bank} user={name}/>
         <Clock speed={speed} count={count} setCount={setCount} />
         <Switch>
           <Route exact path="/">
