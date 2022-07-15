@@ -32,8 +32,8 @@ function App() {
     [])
     
 
-  // useEffect(() => {fetch("http://localhost:3000/leaderboard").then((r)=> r.json()).then((data) => setHighScore(data))},
-  // [])
+  useEffect(() => {fetch("http://localhost:3000/leaderboard").then((r)=> r.json()).then((data) => setHighScore(data))},
+  [])
 
   function fetchFarm() {
     fetch("http://localhost:3000/farm")
@@ -107,6 +107,15 @@ function App() {
   setWinnerTrap(true)
   setWinners(codeeFamTree)
   console.log(codeeFamTree)
+  fetch("http://localhost:3000/leaderboard", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify({name: "test"}),
+})
+.then((r) => r.json())
+.then((data) => setHighScore((prevState) => ([...prevState, data])))
 } else {
   return null
 }}
