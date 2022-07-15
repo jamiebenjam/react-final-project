@@ -25,13 +25,13 @@ function App() {
 
 
   useEffect(() => {
-    let userName = window.prompt("Hi welcome to Codee Ranch!", "Enter Player 1 name");
+    let userName = window.prompt("Hi welcome to Codee Ranch!", "Enter Player 1 first name");
     setName(userName)}, 
     [])
     
 
   function fetchFarm() {
-    fetch("http://localhost:8000/farm")
+    fetch("http://localhost:3000/farm")
       .then((r) => r.json())
       .then((farmData) => setFarmItems(farmData));
   }
@@ -88,14 +88,13 @@ function App() {
             setFarmItems((items) => ([...items, sell]))
   }
  // High Score Stuff
- setHighScore(bank)
-console.log(highScore)
-
+ 
+ 
  function finisher() {
   if (winnerTrap === false) {
   const codeeFamTree = {
     name: name,
-    highScore: highScore,
+    highScore: bank.toFixed(2),
     GameSpeed: speed,
     
   }

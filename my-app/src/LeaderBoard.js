@@ -10,7 +10,7 @@ function LeaderBoard({winners}) {
     return (
         <>
         <div>
-           {`1. Name: ${winners.name} ...............................Game Speed: ${winners.GameSpeed}ms........................Codee Endowment: $${winners.highScore} `}
+           {`1. Name: ${winners.name} Codee ...............................Game Speed: ${winners.GameSpeed}ms........................Codee Endowment: $${winners.highScore} `}
         </div>
         </>
     )

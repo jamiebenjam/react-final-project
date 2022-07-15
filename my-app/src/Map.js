@@ -23,7 +23,7 @@ function Map({bank, user, finisher}) {
             {/* <h1> .</h1> */}
             <br></br>
             <NavLink className="navDiv" to="/">Codee Ranch</NavLink> | <NavLink className="navDiv" to="/town">Market</NavLink> | <NavLink className="navDiv" to="/garden">Garden</NavLink> | <NavLink className="navDiv" to="/barn">Barn</NavLink>
-            <h2 className="navDiv">Bank Debt: {remainder > 0 ? new Intl.NumberFormat('us-US', { style: 'currency', currency: 'USD' }).format(remainder) : (trapHouse(), finisher())}</h2>
+            <h2 className="navDiv">Remaining Bank Debt: {remainder > 0 ? new Intl.NumberFormat('us-US', { style: 'currency', currency: 'USD' }).format(remainder) : (trapHouse(), finisher())}</h2>
             <h2 className="navDiv">Bank Account: {new Intl.NumberFormat('us-US', { style: 'currency', currency: 'USD' }).format(bank)}</h2>
             <NavLink className="navDiv" to="/LeaderBoard"> Leader Board</NavLink>
         </div>
