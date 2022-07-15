@@ -19,9 +19,11 @@ function App() {
   const [bank, setBank] = useState(24999);
   const [speed, setSpeed] = useState(null);
   const [name, setName] = useState("")
-  const [highScore, setHighScore] = useState(0)
+  const [highScore, setHighScore] = useState([])
   const [winners, setWinners] = useState([])
   const [winnerTrap, setWinnerTrap] = useState(false)
+
+  
 
 
   useEffect(() => {
@@ -29,6 +31,9 @@ function App() {
     setName(userName)}, 
     [])
     
+
+  // useEffect(() => {fetch("http://localhost:3000/leaderboard").then((r)=> r.json()).then((data) => setHighScore(data))},
+  // [])
 
   function fetchFarm() {
     fetch("http://localhost:3000/farm")
@@ -96,6 +101,7 @@ function App() {
     name: name,
     highScore: bank.toFixed(2),
     GameSpeed: speed,
+    day: count,
     
   }
   setWinnerTrap(true)

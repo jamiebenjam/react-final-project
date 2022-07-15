@@ -1,4 +1,12 @@
-{
+{ "leaderboard": [
+  {
+    "name": "jamie",
+    "highScore": 40000,
+    "GameSpeed": 1000,
+    "day": 2
+  }
+],
+
   "farm": [
     {
       "id": 1,
