@@ -15,7 +15,6 @@ function Town({farmItems, setMyFarmItems, setFarmItems, poster, bank, setBank, c
     let random = (Math.random() + 1).toFixed(2)
     let matRandom = Math.floor(Math.random()*20)
 
-    console.log(matRandom)
      
     function handleSubmit(e) {
         e.preventDefault();

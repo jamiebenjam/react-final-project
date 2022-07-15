@@ -7,7 +7,6 @@ function FarmItems({id, name, image, price, type, setMyFarmItems, item, setFarmI
             return alert("You do not have enough money, go back to Codee Ranch and check under the sofa cushion! ")
         } else {
             item.birthday = count; 
-            console.log(item)
             setFarmItems(item)
         }
        

@@ -9,13 +9,7 @@ function Map() {
         <div >
             {/* <h1> .</h1> */}
             <br></br>
-            <NavLink className="navDiv" to="/">Codee Ranch</NavLink>
-            <br></br>
-            <NavLink className="navDiv" to="/town">Market</NavLink>
-            <br></br>
-            <NavLink className="navDiv" to="/garden">Garden</NavLink>
-            <br></br>
-            <NavLink className="navDiv" to="/barn">Barn</NavLink>
+            <NavLink className="navDiv" to="/">Codee Ranch</NavLink> | <NavLink className="navDiv" to="/town">Market</NavLink> | <NavLink className="navDiv" to="/garden">Garden</NavLink> | <NavLink className="navDiv" to="/barn">Barn</NavLink>
         </div>
         </NavDetail>
     )
