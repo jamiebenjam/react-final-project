@@ -19,8 +19,6 @@ function App() {
   const [speed, setSpeed] = useState(null);
   const [name, setName] = useState("")
 
-  
-
   useEffect(() => {
     let userName = window.prompt("Hi welcome to Codee Ranch!", "Enter Player 1 name");
     setName(userName)}, 
@@ -33,6 +31,10 @@ function App() {
       .then((farmData) => setFarmItems(farmData));
   }
   useEffect(fetchFarm, []);
+  
+  if (count >= 150 && bank < 30000) {
+    return alert(`${name}, I don't know that farming is for you......#learnToCode(e)?`)
+  } else {
 
   
   const produceFilter = myFarmItems.filter((item) => item.type === "produce");
@@ -116,6 +118,7 @@ function App() {
       </div>
     </body>
   );
+}
 }
 
 export default App;

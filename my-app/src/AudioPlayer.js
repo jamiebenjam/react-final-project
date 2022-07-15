@@ -14,7 +14,7 @@ function AudioPlayer({music, user}) {
     <div>
         <h1 className="codeeRanch">Codee Ranch</h1>
         {showInstructions ? copy : null}
-        <button onClick={handleClick}>#learnToCodee (instructions)</button>
+        <button onClick={handleClick}>#learnToCodee (Instructions)</button>
         <br></br>
         <hr></hr>
         <audio src={music} controls loop/>
