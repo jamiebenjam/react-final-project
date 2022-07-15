@@ -9,15 +9,20 @@ import Garden from "./Garden";
 import Barn from "./Barn";
 import Music from "./CodeeRanchTheme.mp3"
 import AudioPlayer from "./AudioPlayer"
+import LeaderBoard from "./LeaderBoard";
 // import { Container } from "semantic-ui-react";
 
 function App() {
   const [farmItems, setFarmItems] = useState([]);
   const [count, setCount] = useState(1);
   const [myFarmItems, setMyFarmItems] = useState([]);
-  const [bank, setBank] = useState(10);
+  const [bank, setBank] = useState(24999);
   const [speed, setSpeed] = useState(null);
   const [name, setName] = useState("")
+  const [highScore, setHighScore] = useState(0)
+  const [winners, setWinners] = useState([])
+  const [winnerTrap, setWinnerTrap] = useState(false)
+
 
   useEffect(() => {
     let userName = window.prompt("Hi welcome to Codee Ranch!", "Enter Player 1 name");
@@ -82,14 +87,31 @@ function App() {
             alert(`You have sold your ${sell.name} for $${((sell.price)*((count - adult) * sell.roi)).toFixed(2)}💸!`),
             setFarmItems((items) => ([...items, sell]))
   }
+ // High Score Stuff
+ setHighScore(bank)
+console.log(highScore)
 
+ function finisher() {
+  if (winnerTrap === false) {
+  const codeeFamTree = {
+    name: name,
+    highScore: highScore,
+    GameSpeed: speed,
+    
+  }
+  setWinnerTrap(true)
+  setWinners(codeeFamTree)
+  console.log(codeeFamTree)
+} else {
+  return null
+}}
 
 
   return (
     <body>
       <div className="App">
         <AudioPlayer user={name} music={Music}/>
-        <Map bank={bank} user={name}/>
+        <Map bank={bank} user={name} finisher={finisher}/>
         <Clock speed={speed} count={count} setCount={setCount} />
         <Switch>
           <Route exact path="/">
@@ -112,6 +134,9 @@ function App() {
           </Route>
           <Route path="/barn">
             <Barn livestockFilter={livestockFilter} setFarmItems={handleSell} count={count} speed={speed} />
+          </Route>
+          <Route path="/leaderBoard">
+          <LeaderBoard winners={winners}/>
           </Route>
         </Switch>
         <audio src="./CodeeRanchTheme.mp3"></audio>

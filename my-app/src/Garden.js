@@ -29,7 +29,9 @@ function Garden({produceFilter, setFarmItems, count, adult, speed}) {
     <div>
       <img src="https://i.redd.it/hprs7qwto2061.png"></img>
       <h1 className="garden-header">Garden</h1>
-      {mapProduceItems}
+      <div id="container">
+                <ul className="farmList"> {mapProduceItems}</ul>
+            </div>
     </div>
     </GardenDetail>
   )

@@ -20,7 +20,7 @@ function Barden({id, name, image, price, type, setMyFarmItems, item, setFarmItem
     }
 
     return (
-        <div >
+        <li >
             
             <button onClick={handleClick}> Harvest
             <p>{name}</p>
@@ -30,7 +30,7 @@ function Barden({id, name, image, price, type, setMyFarmItems, item, setFarmItem
             <p>{type}</p>
             </button>
 
-        </div>
+        </li>
     )
 }
 
