@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/react-final-project/static/css/main.120fc463.css",
+    "main.js": "/react-final-project/static/js/main.c6046ad4.js",
+    "static/js/787.28cb0dcd.chunk.js": "/react-final-project/static/js/787.28cb0dcd.chunk.js",
+    "static/media/docktrin.ttf": "/react-final-project/static/media/docktrin.045c01f2b787abfeb6ec.ttf",
+    "static/media/CodeeRanchTheme.mp3": "/react-final-project/static/media/CodeeRanchTheme.9fe6a23f4b9b43d8eb75.mp3",
+    "static/media/theranch.png": "/react-final-project/static/media/theranch.6b682105dddb7b406a31.png",
+    "static/media/grass.jpeg": "/react-final-project/static/media/grass.107a8d43612552a3c75a.jpeg",
+    "index.html": "/react-final-project/index.html",
+    "main.120fc463.css.map": "/react-final-project/static/css/main.120fc463.css.map",
+    "main.c6046ad4.js.map": "/react-final-project/static/js/main.c6046ad4.js.map",
+    "787.28cb0dcd.chunk.js.map": "/react-final-project/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.120fc463.css",
+    "static/js/main.c6046ad4.js"
+  ]
+}
