@@ -16,7 +16,7 @@ function App() {
   const [farmItems, setFarmItems] = useState([]);
   const [count, setCount] = useState(1);
   const [myFarmItems, setMyFarmItems] = useState([]);
-  const [bank, setBank] = useState(24999);
+  const [bank, setBank] = useState(10);
   const [speed, setSpeed] = useState(null);
   const [name, setName] = useState("")
   const [highScore, setHighScore] = useState([])
